@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Simple Application
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid *ngIf="userList">
+    <ion-card *ngFor="let users of userList">
+      <ion-card-header>
+       <ion-card-title>{{ users.first_name }} {{ users.last_name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button ion-button fill="outline" large (click)="presentModal(users.id)">Details</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+</ion-content>
